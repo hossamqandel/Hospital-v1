@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--  Splash And Login -->
+    <string name="loading">تحميل ...</string>
+    <string name="welcome_back">مرحبا بعودتك !</string>
+    <string name="to_continue_login_now">للإستمرار , سجل الأن</string>
+    <string name="phone_number">رقم المحمول</string>
+    <string name="password">كلة المرور</string>
+    <string name="forget_password">نسيت كلمة المرور ?</string>
+    <string name="login">تسجيل الدخول</string>
+    <!--  Specialist -->
+    <string name="employee">موظف</string>
+    <string name="tasks">مهام</string>
+    <string name="reports">تقارير</string>
+    <string name="attendance_leaving">الحضور - الانصراف</string>
+    <!--  Employee List -->
+    <string name="search_for_employee">ابحث عن موظف</string>
+    <!--  Create User -->
+    <string name="new_user">مستخدم جديد</string>
+    <string name="first_name">الاسم الاول</string>
+    <string name="last_name">الاسم الاخير</string>
+    <string name="e_mail">البريد الالكتروني</string>
+    <string name="address">العنوان</string>
+    <!--  Profile -->
+    <string name="my_profile">صفحتي الشخصية</string>
+
+
+
+
+
+    <!--  Spinners Arrays  -->
+    <string-array name="spinnergender">
+        <item>النوع</item>
+        <item>ذكر</item>
+        <item>انثى</item>
+    </string-array>
+
+    <string-array name="spinnerspecialist">
+        <item>التخصص</item>
+        <item>دكتور</item>
+        <item>ممرضة</item>
+        <item>استقبال</item>
+        <item>مدير</item>
+        <item>طبيب مختبر</item>
+        <item>تنمية بشرية</item>
+    </string-array>
+
+    <string-array name="spinnerstatus">
+        <item>الحالة الاجتماعية</item>
+        <item>اعزب</item>
+        <item>متزوج</item>
+    </string-array>
+
+
+    <!--  Errors Validation Messages  -->
+    <string name="required">مطلوب</string>
+    <string name="select_gender_type">حدد النوع</string>
+    <string name="select_specialist_type">حدد التخصص</string>
+    <string name="select_status_type">حدد الحاله الاجتماعيه</string>
+    <string name="enter_the_email_correctly">ادخل البريد الالكتروني بشكل صحيح</string>
+
+
+
+
+</resources>

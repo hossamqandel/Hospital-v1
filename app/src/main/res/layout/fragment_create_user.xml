@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:orientation="vertical"
+    tools:context=".Ui.Fragments.HR.NewUser.CreateUserFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_rectangle_3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/createUser_BackArrow_IV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="60dp"
+            android:src="@drawable/ic_left_arrow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView77"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="center"
+            android:text="@string/new_user"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/createUser_fName_ET"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:background="@drawable/text_input_layout"
+            android:drawableStart="@drawable/ic_person"
+            android:drawablePadding="11dp"
+            android:fontFamily="@font/poppins_regular"
+            android:hint="@string/first_name"
+            android:paddingHorizontal="16dp"
+            android:gravity="start|center_vertical"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/createUser_BackArrow_IV" />
+
+        <EditText
+            android:id="@+id/createUser_LName_ET"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:background="@drawable/text_input_layout"
+            android:drawableStart="@drawable/ic_person"
+            android:drawablePadding="11dp"
+            android:fontFamily="@font/poppins_regular"
+            android:hint="@string/last_name"
+            android:gravity="start|center_vertical"
+            android:paddingHorizontal="16dp"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/createUser_fName_ET" />
+
+        <Spinner
+            android:id="@+id/createUser_gender_spin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/text_input_layout"
+            android:drawableStart="@drawable/ic_person"
+            android:drawablePadding="11dp"
+            android:fontFamily="@font/poppins_regular"
+            android:paddingStart="@dimen/_30sdp"
+            android:gravity="start|center_vertical"
+            android:entries="@array/spinnergender"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:paddingHorizontal="16dp"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/createUser_LName_ET" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:src="@drawable/ic_gender"
+            app:layout_constraintBottom_toBottomOf="@+id/createUser_gender_spin"
+            app:layout_constraintStart_toStartOf="@+id/createUser_gender_spin"
+            app:layout_constraintTop_toTopOf="@+id/createUser_gender_spin" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:src="@drawable/ic_arrow_down"
+            app:layout_constraintBottom_toBottomOf="@+id/createUser_gender_spin"
+            app:layout_constraintEnd_toEndOf="@+id/createUser_gender_spin"
+            app:layout_constraintTop_toTopOf="@+id/createUser_gender_spin" />
+
+
+        <Spinner
+            android:id="@+id/createUser_specialist_spin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/text_input_layout"
+            android:drawablePadding="11dp"
+            android:fontFamily="@font/poppins_regular"
+            android:paddingHorizontal="16dp"
+            android:entries="@array/spinnerspecialist"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:gravity="start|center_vertical"
+            android:paddingStart="@dimen/_30sdp"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/createUser_gender_spin" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:src="@drawable/ic_emergency_bag"
+            app:layout_constraintBottom_toBottomOf="@+id/createUser_specialist_spin"
+            app:layout_constraintStart_toStartOf="@+id/createUser_gender_spin"
+            app:layout_constraintTop_toTopOf="@+id/createUser_specialist_spin" />
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:src="@drawable/ic_arrow_down"
+            app:layout_constraintBottom_toBottomOf="@+id/createUser_specialist_spin"
+            app:layout_constraintEnd_toEndOf="@+id/createUser_gender_spin"
+            app:layout_constraintTop_toTopOf="@+id/createUser_specialist_spin" />
+
+
+        <TextView
+            android:id="@+id/createUser_BirthDate_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/text_input_layout"
+            android:fontFamily="@font/poppins_regular"
+            android:paddingStart="15dp"
+            android:paddingEnd="30dp"
+            android:gravity="start|center_vertical"
+            android:drawableStart="@drawable/ic_calender"
+            android:drawablePadding="11dp"
+            android:textColor="@color/black"
+            android:hint="Select date"
+            android:textSize="@dimen/_13ssp"
+            android:layout_marginTop="@dimen/_16sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/createUser_specialist_spin" />
+
+<!--        <ImageView-->
+<!--            android:id="@+id/imageView11"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_marginStart="@dimen/_12sdp"-->
+<!--            android:src="@drawable/ic_calender"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/createUser_BirthDate_spin"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/createUser_gender_spin"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/createUser_BirthDate_spin" />-->
+
+        <ImageView
+            android:id="@+id/createUser_Date_arrowBTN"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:src="@drawable/ic_arrow_down"
+            app:layout_constraintBottom_toBottomOf="@+id/createUser_BirthDate_TV"
+            app:layout_constraintEnd_toEndOf="@+id/createUser_gender_spin"
+            app:layout_constraintTop_toTopOf="@+id/createUser_BirthDate_TV" />
+
+
+        <Spinner
+            android:id="@+id/createUser_Status_spin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/text_input_layout"
+            android:drawablePadding="11dp"
+            android:entries="@array/spinnerstatus"
+            android:fontFamily="@font/poppins_regular"
+            android:paddingHorizontal="16dp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:paddingStart="@dimen/_30sdp"
+            android:gravity="start|center_vertical"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/createUser_BirthDate_TV" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:src="@drawable/ic_heart"
+            app:layout_constraintBottom_toBottomOf="@+id/createUser_Status_spin"
+            app:layout_constraintStart_toStartOf="@+id/createUser_gender_spin"
+            app:layout_constraintTop_toTopOf="@+id/createUser_Status_spin" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:src="@drawable/ic_arrow_down"
+            app:layout_constraintBottom_toBottomOf="@+id/createUser_Status_spin"
+            app:layout_constraintEnd_toEndOf="@+id/createUser_gender_spin"
+            app:layout_constraintTop_toTopOf="@+id/createUser_Status_spin" />
+
+        <EditText
+            android:id="@+id/createUser_ٍPhonNum_ET"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:background="@drawable/text_input_layout"
+            android:drawableStart="@drawable/ic_phone"
+            android:drawablePadding="11dp"
+            android:fontFamily="@font/poppins_regular"
+            android:hint="@string/phone_number"
+            android:paddingHorizontal="16dp"
+            android:gravity="start|center_vertical"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/createUser_Status_spin" />
+
+        <EditText
+            android:id="@+id/createUser_ٍEmail_ET"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:background="@drawable/text_input_layout"
+            android:drawableStart="@drawable/ic_email"
+            android:drawablePadding="11dp"
+            android:fontFamily="@font/poppins_regular"
+            android:hint="@string/e_mail"
+            android:paddingHorizontal="16dp"
+            android:gravity="start|center_vertical"
+            android:inputType="textEmailAddress"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/createUser_ٍPhonNum_ET" />
+
+        <EditText
+            android:id="@+id/createUser_ٍAddress_ET"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:background="@drawable/text_input_layout"
+            android:drawableStart="@drawable/ic_location_mark"
+            android:drawablePadding="11dp"
+            android:fontFamily="@font/poppins_regular"
+            android:hint="@string/address"
+            android:paddingHorizontal="16dp"
+            android:textSize="@dimen/_12ssp"
+            android:gravity="start|center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/createUser_ٍEmail_ET" />
+
+        <EditText
+            android:id="@+id/createUser_ٍPass_ET"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:background="@drawable/text_input_layout"
+            android:drawableStart="@drawable/ic_lock_password"
+            android:drawablePadding="11dp"
+            android:fontFamily="@font/poppins_regular"
+            android:hint="@string/password"
+            android:paddingHorizontal="16dp"
+            android:textSize="@dimen/_12ssp"
+            android:gravity="start|center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/createUser_ٍAddress_ET" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/createUser_ٍcreate_BTN"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_22sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:backgroundTint="@color/main_color_Green"
+            android:text="Create user"
+            android:textColor="@color/white"
+            app:cornerRadius="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/createUser_ٍPass_ET"
+            app:layout_constraintStart_toStartOf="@+id/createUser_ٍPass_ET"
+            app:layout_constraintTop_toBottomOf="@id/createUser_ٍPass_ET" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_rectangle_2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+<!--        <ImageView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:src="@drawable/ic_home_indicator"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent" />-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
