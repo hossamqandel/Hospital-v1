@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Ui.Fragments.Receptionist.CreateCall.CreateCallFragment">
+
+    <ImageView
+        android:id="@+id/createCall_BackArrow_IV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/ic_left_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/create_call"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/createCall_BackArrow_IV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/createCall_BackArrow_IV" />
+
+
+    <EditText
+        android:id="@+id/createCall_patientName_ET"
+        android:layout_width="337dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_14sdp"
+        android:layout_marginTop="@dimen/_17sdp"
+        android:background="@drawable/text_search_for_employee"
+        android:fontFamily="@font/poppins_regular"
+        android:gravity="start|center_vertical"
+        android:hint="@string/patient_name"
+        android:paddingHorizontal="@dimen/_9sdp"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <!--    createCall_patientName_ET-->
+
+    <EditText
+        android:id="@+id/createCall_patientAge_ET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:background="@drawable/text_search_for_employee"
+        android:fontFamily="@font/poppins_regular"
+        android:gravity="start|center_vertical"
+        android:hint="@string/age"
+        android:paddingHorizontal="@dimen/_9sdp"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintEnd_toEndOf="@+id/createCall_patientName_ET"
+        app:layout_constraintStart_toStartOf="@+id/createCall_patientName_ET"
+        app:layout_constraintTop_toBottomOf="@+id/createCall_patientName_ET" />
+
+
+    <EditText
+        android:id="@+id/createCall_patientPhonNum_ET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:background="@drawable/text_search_for_employee"
+        android:fontFamily="@font/poppins_regular"
+        android:gravity="start|center_vertical"
+        android:hint="@string/phone_number"
+        android:paddingHorizontal="@dimen/_9sdp"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintEnd_toEndOf="@+id/createCall_patientAge_ET"
+        app:layout_constraintStart_toStartOf="@+id/createCall_patientAge_ET"
+        app:layout_constraintTop_toBottomOf="@+id/createCall_patientAge_ET" />
+
+
+    <TextView
+        android:id="@+id/createCall_SelectDoctor_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:background="@drawable/text_search_for_employee"
+        android:drawableEnd="@drawable/ic_right_arrow"
+        android:fontFamily="@font/poppins_regular"
+        android:gravity="start|center_vertical"
+        android:hint="@string/select_doctor"
+        android:paddingHorizontal="@dimen/_9sdp"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintEnd_toEndOf="@+id/createCall_patientPhonNum_ET"
+        app:layout_constraintStart_toStartOf="@+id/createCall_patientPhonNum_ET"
+        app:layout_constraintTop_toBottomOf="@+id/createCall_patientPhonNum_ET" />
+
+
+    <EditText
+        android:id="@+id/createCall_CaseDescription_ET"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:background="@drawable/text_search_for_employee"
+        android:fontFamily="@font/poppins_regular"
+        android:gravity="start"
+        android:hint="@string/case_description"
+        android:paddingHorizontal="@dimen/_9sdp"
+        android:paddingVertical="@dimen/_8sdp"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintEnd_toEndOf="@+id/createCall_SelectDoctor_TV"
+        app:layout_constraintStart_toStartOf="@+id/createCall_SelectDoctor_TV"
+        app:layout_constraintTop_toBottomOf="@+id/createCall_SelectDoctor_TV" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/createCall_sendCall_BTN"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/main_color_Green"
+        android:text="@string/send_call"
+        android:fontFamily="@font/poppins_regular"
+        android:textSize="@dimen/_12ssp"
+        android:gravity="center_vertical|center_horizontal"
+        android:textAllCaps="false"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView12"
+        app:layout_constraintEnd_toEndOf="@+id/createCall_CaseDescription_ET"
+        app:layout_constraintStart_toStartOf="@+id/createCall_CaseDescription_ET" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_home_indicator"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

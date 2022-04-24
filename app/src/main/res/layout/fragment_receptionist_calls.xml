@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Ui.Fragments.Receptionist.Calls.ReceptionistCallsFragment">
+
+    <ImageView
+        android:id="@+id/calls_BackArrow_IV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/ic_left_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/calls"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14ssp"
+        android:fontFamily="@font/poppins_regular"
+        app:layout_constraintBottom_toBottomOf="@+id/calls_BackArrow_IV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/calls_BackArrow_IV" />
+
+    <TextView
+        android:id="@+id/calls_searchByDate_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_17sdp"
+        android:background="@drawable/text_input_date"
+        android:hint="24.04.2022"
+        android:paddingHorizontal="@dimen/_8sdp"
+        android:fontFamily="@font/poppins_regular"
+        android:textSize="@dimen/_12ssp"
+        android:textColor="@color/black"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="@+id/calls_BackArrow_IV"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <ImageView
+        android:id="@+id/calls_calender_Dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_calender_black_background"
+        app:layout_constraintBottom_toBottomOf="@+id/calls_searchByDate_TV"
+        app:layout_constraintStart_toEndOf="@+id/calls_searchByDate_TV"
+        app:layout_constraintTop_toTopOf="@+id/calls_searchByDate_TV" />
+
+    <ImageView
+        android:id="@+id/calls_addCall_IV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_addcall"
+        android:layout_marginStart="@dimen/_4sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/calls_calender_Dialog"
+        app:layout_constraintStart_toEndOf="@+id/calls_calender_Dialog"
+        app:layout_constraintTop_toTopOf="@+id/calls_calender_Dialog" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/calls_calls_recycler"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginVertical="@dimen/_27sdp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:listitem="@layout/item_receptionist_calls"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/calls_searchByDate_TV" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_home_indicator"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
