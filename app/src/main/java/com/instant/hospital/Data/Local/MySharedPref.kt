@@ -16,6 +16,11 @@ object MySharedPref {
     private const val USER_ID = "user id"
     private const val USER_ATTENDED = "attended"
     private const val USER_LEAVING = "leaving"
+    private const val USER_STATUS = "status"
+    private const val USER_GENDER = "gender"
+    private const val USER_BIRTH_DATE = "birth date"
+    private const val USER_ADDRESS = "address"
+
 
     fun init(context: Context?) {
         mAppContext = context
@@ -26,6 +31,7 @@ object MySharedPref {
     }
 
     /**********************************/
+
 
     fun setUserId(container: Int) {
         val editor = getSharedPreferences()?.edit()
@@ -69,7 +75,9 @@ object MySharedPref {
         editor?.putString(USER_TOKEN, container)?.apply()
     }
 
-    fun getUserSecretToken(): String = getSharedPreferences()?.getString(USER_TOKEN, "")!!
+    fun getUserSecretToken(): String{
+        return getSharedPreferences()?.getString(USER_TOKEN, "")!!
+    }
 
     /**********************************/
 
@@ -99,41 +107,56 @@ object MySharedPref {
     fun getUserLeaving(): String = getSharedPreferences()?.getString(USER_LEAVING, "")!!
 
     /**********************************/
+    fun setUserStatus(container: String) {
+        val editor = getSharedPreferences()?.edit()
+        editor?.putString(USER_STATUS, container)?.apply()
+    }
+
+    fun getUserStatus(): String = getSharedPreferences()?.getString(USER_STATUS, "")!!
+
+    /**********************************/
+
+    fun setUserGender(container: String) {
+        val editor = getSharedPreferences()?.edit()
+        editor?.putString(USER_GENDER, container)?.apply()
+    }
+
+    fun getUserGender(): String = getSharedPreferences()?.getString(USER_GENDER, "")!!
+    /**********************************/
+
+    fun setUserBirthDate(container: String) {
+        val editor = getSharedPreferences()?.edit()
+        editor?.putString(USER_BIRTH_DATE, container)?.apply()
+    }
+
+    fun getUserBirthDate(): String = getSharedPreferences()?.getString(USER_BIRTH_DATE, "")!!
+
+    /**********************************/
+
+    fun setUserAddress(container: String) {
+        val editor = getSharedPreferences()?.edit()
+        editor?.putString(USER_ADDRESS, container)?.apply()
+    }
+
+    fun getUserAddress(): String = getSharedPreferences()?.getString(USER_ADDRESS, "")!!
+
+
+    /**********************************/
+
+//    fun setUserStatus(container: String) {
+//        val editor = getSharedPreferences()?.edit()
+//        editor?.putString(USER_ADDRESS, container)?.apply()
+//    }
+//
+//    fun getUserStatus(): String = getSharedPreferences()?.getString(USER_ADDRESS, "")!!
+
+
+    /**********************************/
 
     fun clearData() {
         getSharedPreferences()?.edit()?.clear()?.apply()
     }
 
 
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

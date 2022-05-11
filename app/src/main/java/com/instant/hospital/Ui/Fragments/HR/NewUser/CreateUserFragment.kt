@@ -11,7 +11,7 @@ import androidx.fragment.app.viewModels
 import com.instant.hospital.Data.Network.NetworkState
 import com.instant.hospital.Models.ModelUser
 import com.instant.hospital.R
-import com.instant.hospital.Utils.gText
+import com.instant.hospital.Utils.onBackPressed
 import com.instant.hospital.Utils.showToastLong
 import com.instant.hospital.Utils.showToastShort
 import com.instant.hospital.databinding.FragmentCreateUserBinding
@@ -42,15 +42,18 @@ class CreateUserFragment : Fragment() {
         observe()
     }
 
+
     private fun observe() {
-        mCreateUsViewModel.registerLiveData.observe(viewLifecycleOwner, {
+        mCreateUsViewModel.registerLiveData.observe(this, {
             when (it.status) {
+
                 NetworkState.Status.RUNNING -> {
+
                 }
+
                 NetworkState.Status.SUCCESS -> {
                     val userData = it.data as ModelUser
-                    showToastShort(userData.message)
-                    showToastShort(userData.data.access_token)
+                    clearAllFields()
                 }
 
                 else -> {
@@ -71,7 +74,7 @@ class CreateUserFragment : Fragment() {
         binding.apply {
             createUserCreateBTN.setOnClickListener { validation() }
             createUserDateArrowBTN.setOnClickListener { initDatePicker() }
-            createUserBackArrowIV.setOnClickListener { requireActivity().onBackPressed() }
+            createUserBackArrowIV.setOnClickListener { createUserBackArrowIV.onBackPressed() }
         }
     }
 
@@ -115,7 +118,7 @@ class CreateUserFragment : Fragment() {
             } else if (type.equals("Specialist") || type.equals("")) {
                 showToastShort(getString(R.string.select_specialist_type))
             } else {
-                mCreateUsViewModel.createNewUser(
+                mCreateUsViewModel.registrationOrder(
                     email,
                     password,
                     first_name,
@@ -154,9 +157,24 @@ class CreateUserFragment : Fragment() {
     }
 
     private fun updateLabel(mCalendar: Calendar) {
-        val myFormat = "MM-dd-yyyy" // mention the format you need
+        val myFormat = "yyyy-MM-dd" // mention the format you need
         val sdf = SimpleDateFormat(myFormat, Locale.UK)
         binding.createUserBirthDateTV.text = sdf.format(mCalendar.time)
+    }
+
+    private fun clearAllFields(){
+        binding.apply {
+            createUserFNameET.text.clear()
+            createUserLNameET.text.clear()
+            createUserBirthDateTV.text = ""
+            createUserPhonNumET.text.clear()
+            createUserEmailET.text.clear()
+            createUserAddressET.text.clear()
+            createUserPassET.text.clear()
+            createUserGenderSpin.setSelection(0)
+            createUserStatusSpin.setSelection(0)
+            createUserSpecialistSpin.setSelection(0)
+        }
     }
 
 

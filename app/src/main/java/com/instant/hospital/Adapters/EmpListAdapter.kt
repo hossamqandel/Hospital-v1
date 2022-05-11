@@ -31,7 +31,7 @@ class EmpListAdapter : RecyclerView.Adapter<EmpListAdapter.MyEmpListHolder>() {
 
         holder.doctorName.text = mList[position].first_name
         holder.type.text = mList[position].type
-        Glide.with(holder.doctorPhoto.context).load(mList[position].avatar).into(holder.doctorPhoto);
+        Glide.with(holder.doctorPhoto.context).load(mList[position].avatar).into(holder.doctorPhoto)
 
     }
 

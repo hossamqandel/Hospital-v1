@@ -244,8 +244,7 @@
         app:cardElevation="0dp"
         app:layout_constraintBottom_toTopOf="@+id/imageView19"
         app:layout_constraintEnd_toEndOf="@+id/docNurse_AttLeav_Card"
-        app:layout_constraintStart_toStartOf="@+id/docNurse_Reports_Card"
-        >
+        app:layout_constraintStart_toStartOf="@+id/docNurse_Reports_Card">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

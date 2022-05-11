@@ -21,13 +21,13 @@ class DoctorCaseViewModel @Inject constructor(private val webServices: WebServic
     fun getCaseDetailsById(caseId: Int = 7){
         viewModelScope.launch(Dispatchers.IO){
             try {
-                val objectDataReceiver = webServices.getSingleCaseDetailsByCaseId(caseId)
+                val dataReceiverObject = webServices.getSingleCaseDetailsByCaseId(caseId)
 
-                    if (objectDataReceiver.status == Const.BACKEND_STATUS_CODE_SUCCESS){
-                        _doctorCaseLiveData.postValue(NetworkState.getLoaded(objectDataReceiver))
+                    if (dataReceiverObject.status == Const.BACKEND_STATUS_CODE_SUCCESS){
+                        _doctorCaseLiveData.postValue(NetworkState.getLoaded(dataReceiverObject))
                 }
                 else {
-                        _doctorCaseLiveData.postValue(NetworkState.getErrorMessage(objectDataReceiver.message))
+                        _doctorCaseLiveData.postValue(NetworkState.getErrorMessage(dataReceiverObject.message))
                     }
             }catch (ex: Exception){
                 _doctorCaseLiveData.postValue(NetworkState.getExeptionErrorMessage(ex))

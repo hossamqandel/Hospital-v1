@@ -10,13 +10,14 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+import javax.inject.Singleton
 
 @HiltViewModel
-class SelectDoctorViewModel @Inject constructor(private val webServices: WebServices) :
-    ViewModel() {
+class SelectEmployeeViewModel @Inject constructor(private val webServices: WebServices) : ViewModel() {
 
     private val _loadDoctorsLiveData = SingleLiveEvent<NetworkState>()
     val loadDoctorsLiveData get() = _loadDoctorsLiveData
+
 
     fun getAllDoctors() {
         viewModelScope.launch(Dispatchers.IO) {
@@ -26,14 +27,30 @@ class SelectDoctorViewModel @Inject constructor(private val webServices: WebServ
 
                 if (objectDataReceiver.status == Const.BACKEND_STATUS_CODE_SUCCESS) {
                     _loadDoctorsLiveData.postValue(NetworkState.getLoaded(objectDataReceiver))
-                }
-                else {
+                } else {
                     _loadDoctorsLiveData.postValue(NetworkState.getErrorMessage(objectDataReceiver.message))
                 }
             } catch (ex: Exception) {
                 _loadDoctorsLiveData.postValue(NetworkState.getExeptionErrorMessage(ex))
             }
         }
+    }
 
+
+    fun getAllNurses() {
+        viewModelScope.launch(Dispatchers.IO) {
+
+            try {
+                val objectDataReceiver = webServices.getAllUsers("nurse")
+
+                if (objectDataReceiver.status == Const.BACKEND_STATUS_CODE_SUCCESS) {
+                    _loadDoctorsLiveData.postValue(NetworkState.getLoaded(objectDataReceiver))
+                } else {
+                    _loadDoctorsLiveData.postValue(NetworkState.getErrorMessage(objectDataReceiver.message))
+                }
+            } catch (ex: Exception) {
+                _loadDoctorsLiveData.postValue(NetworkState.getExeptionErrorMessage(ex))
+            }
+        }
     }
 }

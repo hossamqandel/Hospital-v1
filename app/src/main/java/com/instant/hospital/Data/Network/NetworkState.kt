@@ -17,7 +17,7 @@ class NetworkState constructor(val status: Status, val msg: Any? = null, val dat
 
         var LOADING: NetworkState = NetworkState(Status.RUNNING)
 
-        fun getErrorMessage(throwable: Throwable): NetworkState {
+        fun getExeptionErrorMessage(throwable: Throwable): NetworkState {
             return when (throwable) {
                 is IOException -> {
                     NetworkState(Status.FAILED, "No Connection ")

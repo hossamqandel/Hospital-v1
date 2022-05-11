@@ -1,28 +1,25 @@
 package com.instant.hospital.Adapters
 
-import android.annotation.SuppressLint
 import android.content.Context
-import android.graphics.Color
-import android.graphics.Color.green
 import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.core.content.ContextCompat
+import android.widget.Toast
 import androidx.core.content.ContextCompat.getColor
 import androidx.core.content.ContextCompat.getDrawable
 import androidx.recyclerview.widget.RecyclerView
 import com.instant.hospital.R
 
-class EmpListSearchTypeAdapter(val OnClick: (Int?) -> Unit) :
+class EmpListSearchTypeAdapter(val OnClick: (String?) -> Unit) :
     RecyclerView.Adapter<EmpListSearchTypeAdapter.MySearchTypeHolder>() {
 
     var mList: ArrayList<String>? = null
     var rowIndex = 0
 
 
-    fun setData(list: ArrayList<String>) {
+    fun setData(list: ArrayList<String>?) {
         this.mList = list
     }
 
@@ -67,7 +64,7 @@ class EmpListSearchTypeAdapter(val OnClick: (Int?) -> Unit) :
             myContext = itemView.context
             itemView.setOnClickListener {
                 rowIndex = layoutPosition
-                OnClick.invoke(rowIndex)
+                OnClick.invoke(mList?.get(layoutPosition))
                 notifyDataSetChanged()
             }
         }

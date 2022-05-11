@@ -20,6 +20,8 @@ import java.util.*
 @AndroidEntryPoint
 class TasksFragment : Fragment() {
     //TODO this screen almost done .. just check on it again when Backend team fix collection and endPoints errors then test it again
+    //TODO this screen almost done .. maybe it need to take any data when click on item position
+
     private var _binding: FragmentTasksBinding? = null
     private val binding get() = _binding!!
     private val mTasksAdapter by lazy { TasksAdapter() }

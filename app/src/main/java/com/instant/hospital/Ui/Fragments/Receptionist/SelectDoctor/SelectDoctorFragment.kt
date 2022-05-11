@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.instant.hospital.Adapters.SelectDoctorAdapter
+import com.instant.hospital.Adapters.SelectEmployeeAdapter
 import com.instant.hospital.Data.Network.NetworkState
 import com.instant.hospital.Models.ModelAllUsers
 import com.instant.hospital.Utils.onBackPressed
@@ -19,8 +19,9 @@ class SelectDoctorFragment : Fragment() {
 
     private var _binding: FragmentSelectDoctorBinding? = null
     private val binding get() = _binding!!
-    private val mSeleDocViewModel: SelectDoctorViewModel by viewModels()
-    private var mSeleDocAdapter: SelectDoctorAdapter? = null
+    private val mSeleDocViewModel: SelectEmployeeViewModel by viewModels()
+    private var mSeleDocAdapter: SelectEmployeeAdapter? = null
+
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -64,7 +65,7 @@ class SelectDoctorFragment : Fragment() {
         })
     }
     private fun adapterHandling(){
-        mSeleDocAdapter = SelectDoctorAdapter { doctorName: String?, doctorId: Int? ->
+        mSeleDocAdapter = SelectEmployeeAdapter { doctorName: String?, doctorId: Int? ->
             if (doctorName != null) {
                 if (doctorId != null) {
                     onClicks(doctorName, doctorId)
@@ -75,7 +76,10 @@ class SelectDoctorFragment : Fragment() {
     private fun onClicks(doctorName: String, doctorId: Int){
         binding.apply {
             materialButton.setOnClickListener {
-                val action = SelectDoctorFragmentDirections.actionSelectDoctorFragmentToCreateCallFragment(doctorName!!, doctorId!!)
+                val action = SelectDoctorFragmentDirections.actionSelectDoctorFragmentToCreateCallFragment(
+                    doctorName,
+                    doctorId
+                )
                 findNavController().navigate(action)
             }
 

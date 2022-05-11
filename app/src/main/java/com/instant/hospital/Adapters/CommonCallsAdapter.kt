@@ -15,9 +15,9 @@ import com.instant.hospital.Utils.setMargins
 
 class CommonCallsAdapter(val onClick: (String) -> Unit): RecyclerView.Adapter<CommonCallsAdapter.MyCommonCallsHolder>() {
 
-    private var mList: List<CaseData> = ArrayList()
+    private var mList: List<CallsData> = ArrayList()
 
-    fun setCommonCallsListToAdapter(list: List<CaseData>){
+    fun setCommonCallsListToAdapter(list: List<CallsData>){
         this.mList = list
         notifyItemChanged(list.size - 1)
     }

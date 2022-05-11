@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.instant.hospital.Data.Local.MySharedPref
 import com.instant.hospital.R
 import com.instant.hospital.Utils.setNavigation
@@ -26,8 +27,9 @@ class DocNurseFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initViewsData()
         onClicks()
+        initViewsData()
+
     }
 
 
@@ -40,6 +42,9 @@ class DocNurseFragment : Fragment() {
     private fun onClicks(){
         binding.apply {
             cardViewIV.setOnClickListener { setNavigation(R.id.action_docNurseFragment_to_profileFragment) }
+            docNurseCasesCard.setOnClickListener { setNavigation(R.id.action_docNurseFragment_to_casesFragment) }
+            docNurseCallsCard.setOnClickListener { setNavigation(R.id.action_docNurseFragment_to_callsFragment) }
+            docNurseTasksCard.setOnClickListener { setNavigation(R.id.action_docNurseFragment_to_tasksFragment) }
         }
     }
 

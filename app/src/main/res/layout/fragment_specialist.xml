@@ -7,7 +7,7 @@
     tools:context=".Ui.Fragments.HR.Specialist.SpecialistFragment">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+        android:id="@+id/cardView_IV"
         android:layout_width="37dp"
         android:layout_height="37dp"
         android:layout_marginStart="16dp"
@@ -30,9 +30,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:textColor="@color/black"
-        android:textSize="@dimen/_10ssp"
-        app:layout_constraintStart_toEndOf="@+id/cardView"
-        app:layout_constraintTop_toTopOf="@+id/cardView"
+        android:layout_marginTop="-4dp"
+        android:textSize="@dimen/_13ssp"
+        android:fontFamily="@font/poppins_regular"
+        app:layout_constraintStart_toEndOf="@+id/cardView_IV"
+        app:layout_constraintTop_toTopOf="@+id/cardView_IV"
         tools:text="Ebrahem Elzainy" />
 
     <TextView
@@ -40,10 +42,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/main_color_Green"
-        android:textSize="@dimen/_8ssp"
+        android:textSize="@dimen/_10ssp"
+        android:layout_marginBottom="-4dp"
         android:layout_marginStart="12dp"
-        app:layout_constraintBottom_toBottomOf="@+id/cardView"
-        app:layout_constraintStart_toEndOf="@+id/cardView"
+        android:fontFamily="@font/poppins_regular"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView_IV"
+        app:layout_constraintStart_toEndOf="@+id/cardView_IV"
         tools:text="Specialist , HR" />
 
     <ImageView

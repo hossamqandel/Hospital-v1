@@ -11,7 +11,7 @@
     <string name="login">تسجيل الدخول</string>
     <!--  Specialist -->
     <string name="employee">موظف</string>
-    <string name="tasks">مهام</string>
+    <string name="tasks">المهام</string>
     <string name="reports">تقارير</string>
     <string name="attendance_leaving">الحضور - الانصراف</string>
     <!--  Employee List -->
@@ -53,14 +53,52 @@
     </string-array>
 
 
+<!--    <string-array name="bloodpressure">-->
+<!--        <item>اقل من 120</item>-->
+<!--        <item>120 - 129</item>-->
+<!--        <item>130 - 139</item>-->
+<!--        <item>140 او اعلى</item>-->
+<!--        <item>اعلى من 180</item>-->
+<!--    </string-array>-->
+
+
     <!--  Errors Validation Messages  -->
     <string name="required">مطلوب</string>
     <string name="select_gender_type">حدد النوع</string>
     <string name="select_specialist_type">حدد التخصص</string>
     <string name="select_status_type">حدد الحاله الاجتماعيه</string>
     <string name="enter_the_email_correctly">ادخل البريد الالكتروني بشكل صحيح</string>
+    <string name="phone_length">رقم الهاتف يجب ان يكون مكون من 11 رقم</string>
+    <string name="name_length_at_least_two">الاسم يجب ان لا يقل عن 2 احرف</string>
+    <string name="password_length">كلمة السر يجب ان تكون على الاقل 8 عناصر</string>
+    <string name="_loading">تحميل...</string>
 
 
+    <string name="calls">مكالمات</string>
+    <string name="create_call">انشئ مكالمة</string>
+    <string name="patient_name">اسم المريض</string>
+    <string name="age">العمر</string>
+    <string name="select_doctor">اختر طبيب</string>
+    <string name="case_description">وصف الحاله</string>
+    <string name="send_call">ارسال المكالمة</string>
+    <string name="case_details">تفاصيل الحالة</string>
+    <string name="date">التاريخ</string>
+    <string name="status">الحاله</string>
+    <string name="button_status_is_loggedout">Case has been logged out</string>
+    <string name="button_status_is_active">تجسل خروج</string>
+    <string name="cases">الحالات</string>
+    <string name="accept">قبول</string>
+    <string name="show_details">اظهار التفاصيل</string>
+
+    <string name="nurse_request_content">لديك طلب جديد من الطبيب من فضلك
+  متابعة وتنفيذ الطلب بأسرع ما يمكن</string>
+    <string name="select_nurse">اختر ممرض</string>
+    <string name="finished">مكتمل</string>
+    <string name="proceess">مستمرة</string>
+    <string name="add_measurement">اضف قياس</string>
+    <string name="blood_pressure">ضغط الدم</string>
+    <string name="sugar_analysis">تحليل السكر</string>
+    <string name="add_note">اضف ملاحظه</string>
 
 
 </resources>

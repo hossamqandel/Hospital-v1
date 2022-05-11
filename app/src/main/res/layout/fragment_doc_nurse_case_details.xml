@@ -4,8 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     android:orientation="vertical"
-    android:fillViewport="true">
+    android:scrollbarStyle="insideInset"
+    android:scrollbars="vertical"
+    tools:context=".Ui.Fragments.Common.DocNurseCaseDetailsFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -13,7 +16,7 @@
 
         <!--  Pinned Values  -->
         <ImageView
-            android:id="@+id/doctorCaseDetails_BackArrow_IV"
+            android:id="@+id/docNurseCaseDetails_BackArrow_IV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="18dp"
@@ -30,19 +33,20 @@
             android:text="@string/case_details"
             android:textColor="@color/black"
             android:textSize="@dimen/_14ssp"
-            app:layout_constraintBottom_toBottomOf="@+id/doctorCaseDetails_BackArrow_IV"
+            app:layout_constraintBottom_toBottomOf="@+id/docNurseCaseDetails_BackArrow_IV"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/doctorCaseDetails_BackArrow_IV" />
+            app:layout_constraintTop_toTopOf="@+id/docNurseCaseDetails_BackArrow_IV" />
 
         <HorizontalScrollView
+            android:id="@+id/horizontalScrollView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
             android:fillViewport="true"
             android:orientation="horizontal"
             android:paddingHorizontal="@dimen/_8sdp"
             android:scrollbars="none"
-            app:layout_constraintBottom_toTopOf="@+id/textView2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4">
@@ -54,67 +58,137 @@
                 android:orientation="horizontal">
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/doctorCaseDetails_Case_BTN"
+                    android:id="@+id/docNurseCaseDetails_Case_BTN"
                     android:layout_width="@dimen/_65sdp"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/main_color_Green"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="Case"
                     android:elevation="0dp"
-                    app:elevation="0dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:stateListAnimator="@null"
+                    android:text="Case"
                     android:textAllCaps="false"
+                    android:textSize="@dimen/_10ssp"
                     app:cornerRadius="2dp"
-                    android:textSize="@dimen/_10ssp" />
+                    app:elevation="0dp" />
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/doctorCaseDetails_MedicalRec_BTN"
+                    android:id="@+id/docNurseCaseDetails_MedicalRec_BTN"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:elevation="0dp"
-                    app:elevation="0dp"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:backgroundTint="@color/white"
+                    android:elevation="0dp"
                     android:fontFamily="@font/poppins_regular"
                     android:gravity="center"
                     android:text="Medical record"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_10ssp"
-                    app:cornerRadius="2dp"/>
+                    app:cornerRadius="2dp"
+                    app:elevation="0dp" />
 
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/doctorCaseDetails_MedicalMesur_BTN"
+                    android:id="@+id/docNurseCaseDetails_MedicalMesur_BTN"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_10sdp"
-                    app:cornerRadius="2dp"
-                    android:elevation="0dp"
-                    app:elevation="0dp"
                     android:backgroundTint="@color/white"
+                    android:elevation="0dp"
                     android:fontFamily="@font/poppins_regular"
-                    android:text="Medical measurement"
                     android:gravity="center"
+                    android:text="Medical measurement"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_10ssp" />
+                    android:textSize="@dimen/_10ssp"
+                    app:cornerRadius="2dp"
+                    app:elevation="0dp" />
 
 
             </LinearLayout>
 
         </HorizontalScrollView>
 
+        <androidx.cardview.widget.CardView
+            android:id="@+id/docNurseCaseDetails_requestCard"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_140sdp"
+            android:backgroundTint="@color/docnurse_cases_details_you_have_request_light_orange_frame"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="0dp"
+            app:layout_constraintEnd_toEndOf="@+id/docNurseCaseDetails_PatientName_TV"
+            app:layout_constraintStart_toStartOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@id/horizontalScrollView"
+            tools:layout_marginTop="@dimen/_15sdp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:paddingVertical="@dimen/_10sdp">
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="You have request"
+                    android:textColor="@color/docnurse_cases_details_you_have_request_deep_orange_text"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/docNurseCaseDetails_Close_BTN"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_x_mark"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView13"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textView13" />
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/nurse_request_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11ssp"
+                    app:layout_constraintEnd_toStartOf="@+id/docNurseCaseDetails_Close_BTN"
+                    app:layout_constraintStart_toStartOf="@+id/textView13"
+                    app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/docNurseCaseDetails_showDetails_BTN"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/docnurse_cases_details_you_have_request_deep_orange_text"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:stateListAnimator="@null"
+                    android:text="@string/show_details"
+                    android:textSize="@dimen/_9ssp"
+                    app:cornerRadius="4dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textView14"
+                    app:layout_constraintTop_toBottomOf="@+id/textView14" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_65sdp"
             android:fontFamily="@font/poppins_semibold"
             android:text="@string/patient_name"
             android:textColor="@color/case_details_grey"
             android:textSize="@dimen/_12ssp"
-            app:layout_constraintStart_toStartOf="@+id/doctorCaseDetails_BackArrow_IV"
-            app:layout_constraintTop_toBottomOf="@+id/doctorCaseDetails_BackArrow_IV" />
+            app:layout_constraintStart_toStartOf="@+id/docNurseCaseDetails_BackArrow_IV"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
+            tools:layout_marginTop="@dimen/_170sdp" />
 
         <TextView
             android:id="@+id/textView7"
@@ -125,7 +199,7 @@
             android:text="@string/age"
             android:textColor="@color/case_details_grey"
             android:textSize="@dimen/_12ssp"
-            app:layout_constraintStart_toStartOf="@+id/doctorCaseDetails_BackArrow_IV"
+            app:layout_constraintStart_toStartOf="@+id/docNurseCaseDetails_BackArrow_IV"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
         <TextView
@@ -137,7 +211,7 @@
             android:text="@string/phone_number"
             android:textColor="@color/case_details_grey"
             android:textSize="@dimen/_12ssp"
-            app:layout_constraintStart_toStartOf="@+id/doctorCaseDetails_BackArrow_IV"
+            app:layout_constraintStart_toStartOf="@+id/docNurseCaseDetails_BackArrow_IV"
             app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
         <TextView
@@ -149,7 +223,7 @@
             android:text="@string/date"
             android:textColor="@color/case_details_grey"
             android:textSize="@dimen/_12ssp"
-            app:layout_constraintStart_toStartOf="@+id/doctorCaseDetails_BackArrow_IV"
+            app:layout_constraintStart_toStartOf="@+id/docNurseCaseDetails_BackArrow_IV"
             app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
 
@@ -162,7 +236,7 @@
             android:text="Doctor Name"
             android:textColor="@color/case_details_grey"
             android:textSize="@dimen/_12ssp"
-            app:layout_constraintStart_toStartOf="@+id/doctorCaseDetails_BackArrow_IV"
+            app:layout_constraintStart_toStartOf="@+id/docNurseCaseDetails_BackArrow_IV"
             app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
         <TextView
@@ -174,7 +248,7 @@
             android:text="Nurse"
             android:textColor="@color/case_details_grey"
             android:textSize="@dimen/_12ssp"
-            app:layout_constraintStart_toStartOf="@+id/doctorCaseDetails_BackArrow_IV"
+            app:layout_constraintStart_toStartOf="@+id/docNurseCaseDetails_BackArrow_IV"
             app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
 
@@ -182,12 +256,12 @@
             android:id="@+id/textView10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_11sdp"
             android:fontFamily="@font/poppins_semibold"
             android:text="@string/status"
-            android:layout_marginTop="@dimen/_11sdp"
             android:textColor="@color/case_details_grey"
             android:textSize="@dimen/_12ssp"
-            app:layout_constraintStart_toStartOf="@+id/doctorCaseDetails_BackArrow_IV"
+            app:layout_constraintStart_toStartOf="@+id/docNurseCaseDetails_BackArrow_IV"
             app:layout_constraintTop_toBottomOf="@+id/textView133" />
 
         <TextView
@@ -199,21 +273,21 @@
             android:text="@string/case_description"
             android:textColor="@color/case_details_grey"
             android:textSize="@dimen/_12ssp"
-            app:layout_constraintStart_toStartOf="@+id/doctorCaseDetails_BackArrow_IV"
+            app:layout_constraintStart_toStartOf="@+id/docNurseCaseDetails_BackArrow_IV"
             app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
 
         <!--  Changed Values  -->
 
         <TextView
-            android:id="@+id/doctorCaseDetails__PatientName_TV"
+            android:id="@+id/docNurseCaseDetails_PatientName_TV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_regular"
             android:textColor="@color/black"
             android:textSize="@dimen/_12ssp"
             app:layout_constraintBottom_toBottomOf="@+id/textView2"
-            app:layout_constraintEnd_toEndOf="@+id/materialButton2"
+            app:layout_constraintEnd_toEndOf="@+id/docNurseCaseDetails_endCaseOrCallDoc_BTN"
             app:layout_constraintTop_toTopOf="@+id/textView2"
             tools:text="Ebrahem Khaled" />
 
@@ -225,47 +299,48 @@
             android:textColor="@color/black"
             android:textSize="@dimen/_12ssp"
             app:layout_constraintBottom_toBottomOf="@id/textView7"
-            app:layout_constraintEnd_toEndOf="@+id/doctorCaseDetails__PatientName_TV"
+            app:layout_constraintEnd_toEndOf="@+id/docNurseCaseDetails_PatientName_TV"
             app:layout_constraintTop_toTopOf="@id/textView7"
             tools:text="25" />
 
 
         <TextView
-            android:id="@+id/doctorCaseDetails__PhoneNum_TV"
+            android:id="@+id/docNurseCaseDetails_PhoneNum_TV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_regular"
             android:textColor="@color/black"
             android:textSize="@dimen/_12ssp"
             app:layout_constraintBottom_toBottomOf="@id/textView8"
-            app:layout_constraintEnd_toEndOf="@+id/materialButton2"
+            app:layout_constraintEnd_toEndOf="@+id/docNurseCaseDetails_endCaseOrCallDoc_BTN"
             app:layout_constraintTop_toTopOf="@id/textView8"
             tools:text="015924364726" />
 
         <TextView
-            android:id="@+id/doctorCaseDetails_Date_TV"
+            android:id="@+id/docNurseCaseDetails_Date_TV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_regular"
             android:textColor="@color/black"
             android:textSize="@dimen/_12ssp"
             app:layout_constraintBottom_toBottomOf="@id/textView9"
-            app:layout_constraintEnd_toEndOf="@+id/materialButton2"
+            app:layout_constraintEnd_toEndOf="@+id/docNurseCaseDetails_endCaseOrCallDoc_BTN"
             app:layout_constraintTop_toTopOf="@id/textView9"
             tools:text="24.05.2022" />
 
 
         <ImageView
-            android:id="@+id/caseDetails_StatusIcon_IV"
+            android:id="@+id/docNurseCaseDetails_StatusIcon_IV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:stateListAnimator="@null"
             app:layout_constraintBottom_toBottomOf="@+id/textView10"
-            app:layout_constraintEnd_toEndOf="@+id/materialButton2"
+            app:layout_constraintEnd_toEndOf="@+id/docNurseCaseDetails_endCaseOrCallDoc_BTN"
             app:layout_constraintTop_toTopOf="@+id/textView10"
             tools:src="@drawable/ic_green_mark" />
 
         <TextView
-            android:id="@+id/doctorCaseDetails_StatusProcess_TV"
+            android:id="@+id/docNurseCaseDetailsStatusProcess_TV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="6dp"
@@ -273,50 +348,69 @@
             android:textColor="@color/black"
             android:textSize="@dimen/_12ssp"
             app:layout_constraintBottom_toBottomOf="@+id/textView10"
-            app:layout_constraintEnd_toStartOf="@+id/caseDetails_StatusIcon_IV"
+            app:layout_constraintEnd_toStartOf="@+id/docNurseCaseDetails_StatusIcon_IV"
             app:layout_constraintTop_toTopOf="@+id/textView10"
             tools:text="Process" />
 
         <TextView
-            android:id="@+id/caseDetails_Description_TV"
+            android:id="@+id/docNurseCaseDetails_Description_TV"
             android:layout_width="@dimen/_270sdp"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:maxLines="8"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_11ssp"
             app:layout_constraintStart_toStartOf="@+id/textView11"
             app:layout_constraintTop_toBottomOf="@+id/textView11"
-            tools:text="Details note : Lorem Ipsum is simply dummy
-text of the printing and typesetting industry.
-Lorem Ipsum has been the industry's " />
+            tools:text="@string/for_test" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/materialButton3"
+            android:id="@+id/docNurseCaseDetails_addNurse_BTN"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_50sdp"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:backgroundTint="@color/main_color_Green"
+            android:elevation="0dp"
+            android:stateListAnimator="@null"
             android:text="Add Nurse"
-            android:layout_marginStart="@dimen/_40sdp"
+            app:cornerRadius="8dp"
+            app:elevation="0dp"
+            app:icon="@drawable/ic_plus"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+            app:layout_constraintTop_toBottomOf="@+id/docNurseCaseDetails_Description_TV" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/doctorCaseDetails_addRequest_BTN"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_11sdp"
+            android:backgroundTint="@color/main_color_Green"
+            android:elevation="0dp"
+            android:stateListAnimator="@null"
             android:text="Request"
-            app:layout_constraintBottom_toBottomOf="@+id/materialButton3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/materialButton3" />
+            app:cornerRadius="8dp"
+            app:elevation="0dp"
+            app:icon="@drawable/ic_plus"
+            app:layout_constraintBottom_toBottomOf="@+id/docNurseCaseDetails_addNurse_BTN"
+            app:layout_constraintStart_toEndOf="@+id/docNurseCaseDetails_addNurse_BTN"
+            app:layout_constraintTop_toTopOf="@+id/docNurseCaseDetails_addNurse_BTN" />
+
         <!--  Changed Values  -->
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/materialButton2"
+            android:id="@+id/docNurseCaseDetails_endCaseOrCallDoc_BTN"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/_14sdp"
+            android:layout_marginTop="@dimen/_53sdp"
+            android:backgroundTint="@color/case_details_button_red"
             android:elevation="0dp"
-            android:text="End Case"
             android:fontFamily="@font/poppins_regular"
             android:gravity="center_vertical|center_horizontal"
             android:paddingVertical="@dimen/_8sdp"
+            android:stateListAnimator="@null"
+            android:text="End Case"
             android:textAllCaps="false"
             android:textSize="@dimen/_11ssp"
             app:cornerRadius="8dp"
@@ -325,41 +419,49 @@ Lorem Ipsum has been the industry's " />
             app:iconSize="@dimen/_12sdp"
             app:layout_constraintEnd_toEndOf="@+id/imageView17"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/materialButton3" />
+            app:layout_constraintTop_toBottomOf="@+id/docNurseCaseDetails_addNurse_BTN" />
 
         <ImageView
             android:id="@+id/imageView17"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_home_indicator"
-            app:layout_constraintTop_toBottomOf="@id/materialButton2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/docNurseCaseDetails_endCaseOrCallDoc_BTN" />
 
         <TextView
             android:id="@+id/doctorCaseDetails_DocName_TV"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_regular"
+            android:gravity="center_vertical|end"
+            android:maxLines="1"
+            android:paddingStart="@dimen/_4sdp"
             android:textColor="@color/black"
             android:textSize="@dimen/_12ssp"
             app:layout_constraintBottom_toBottomOf="@+id/textView12"
-            app:layout_constraintEnd_toEndOf="@+id/doctorCaseDetails_Date_TV"
+            app:layout_constraintEnd_toEndOf="@+id/docNurseCaseDetails_Date_TV"
+            app:layout_constraintStart_toEndOf="@id/textView12"
             app:layout_constraintTop_toTopOf="@+id/textView12"
             tools:text="Salma Ali" />
 
         <TextView
             android:id="@+id/doctorCaseDetails_NurseName_TV"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_regular"
+            android:gravity="center_vertical|end"
+            android:maxLines="1"
+            android:paddingStart="@dimen/_4sdp"
             android:textColor="@color/black"
             android:textSize="@dimen/_12ssp"
             app:layout_constraintBottom_toBottomOf="@+id/textView133"
             app:layout_constraintEnd_toEndOf="@+id/doctorCaseDetails_DocName_TV"
+            app:layout_constraintStart_toEndOf="@id/textView133"
             app:layout_constraintTop_toTopOf="@+id/textView133"
-            tools:text="Nada Mostafa" />
-
+            tools:text="Nada Mohamed" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </ScrollView>

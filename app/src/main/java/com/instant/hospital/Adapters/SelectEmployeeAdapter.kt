@@ -6,12 +6,12 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.instant.hospital.Models.Data
 import com.instant.hospital.Models.UserData
 import com.instant.hospital.R
+import javax.inject.Singleton
 
-
-class SelectDoctorAdapter(val onClick: (String?, Int?) -> Unit) : RecyclerView.Adapter<SelectDoctorAdapter.MySelectedDoctorHolder>() {
+@Singleton
+class SelectEmployeeAdapter(val onClick: (String?, Int?) -> Unit) : RecyclerView.Adapter<SelectEmployeeAdapter.MySelectedDoctorHolder>() {
 
     private var lastCheckedPosition = -1
 
@@ -37,14 +37,6 @@ class SelectDoctorAdapter(val onClick: (String?, Int?) -> Unit) : RecyclerView.A
 
         holder.selectedDocRB.isChecked = position == lastCheckedPosition
 
-    }
-
-    override fun getItemId(position: Int): Long {
-        return super.getItemId(position)
-    }
-
-    override fun getItemViewType(position: Int): Int {
-        return super.getItemViewType(position)
     }
 
     override fun getItemCount(): Int = if (mList?.size == null) 0 else mList!!.size

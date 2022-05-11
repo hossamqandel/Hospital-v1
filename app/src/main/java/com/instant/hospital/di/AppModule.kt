@@ -52,8 +52,7 @@ object AppModule {
                     val url = originalUrl.newBuilder().build()
                     val requestBuilder = originalRequest.newBuilder().url(url)
                         .addHeader("Accept", "application/json")
-                        .addHeader("Authorization", "Bearer ${MySharedPref.getUserSecretToken()}"
-                        )
+                        .addHeader("Authorization", "Bearer ${MySharedPref.getUserSecretToken()}")
                     val request = requestBuilder.build()
                     val response = chain.proceed(request)
                     response.code//status code
@@ -63,11 +62,10 @@ object AppModule {
             .build()
 
         return Retrofit.Builder()
+            .baseUrl(Const.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .client(client)
-            .baseUrl(Const.BASE_URL)
             .build().create(WebServices::class.java)
     }
-
 }

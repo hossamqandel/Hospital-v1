@@ -55,7 +55,7 @@ dependencies {
     kapt "com.google.dagger:hilt-compiler:2.38.1"
 
     //Navigation Compononent
-    var nav_version = "2.4.1"
+    var nav_version = "2.4.2"
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
 
@@ -66,7 +66,7 @@ dependencies {
     implementation(platform("com.squareup.okhttp3:okhttp-bom:4.9.3"))
     implementation 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2'
     // define any required OkHttp artifacts without version
-    implementation("com.squareup.okhttp3:okhttp")
+    implementation("com.squareup.okhttp3:okhttp:4.8.0")
     implementation 'com.squareup.okhttp3:logging-interceptor:4.8.0'
 
 
@@ -101,6 +101,11 @@ dependencies {
 
     //Circle Imageview
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //DataStore
+    implementation("androidx.datastore:datastore:1.0.0")
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+
 
 
 }

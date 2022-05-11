@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:layoutDescription="@xml/fragment_employee_list_scene"
     tools:context=".Ui.Fragments.HR.EmployeeList.EmployeeListFragment">
 
     <ImageView
@@ -20,6 +21,7 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
         android:text="@string/employee"
         android:textColor="@color/black"
         android:textSize="@dimen/_12ssp"
@@ -28,18 +30,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/employeeList_BackArrow_IV" />
 
-    <EditText
-        android:id="@+id/editText"
+    <SearchView
+        android:id="@+id/employeeList_SearchView"
         android:layout_width="0dp"
-        android:layout_height="48dp"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="22dp"
         android:background="@drawable/text_search_for_employee"
         android:drawableStart="@drawable/ic_search"
         android:drawablePadding="11dp"
-        android:hint="@string/search_for_employee"
+        android:iconifiedByDefault="false"
         android:paddingHorizontal="16dp"
-        android:textSize="14sp"
+        android:queryHint="@string/search_for_employee"
+        android:textSize="@dimen/_2ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
@@ -58,35 +61,35 @@
         android:id="@+id/employList_Btntypes_recycler"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="14dp"
-        android:paddingVertical="8dp"
         android:layout_marginTop="7dp"
         android:orientation="horizontal"
+        android:paddingHorizontal="14dp"
+        android:paddingVertical="8dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText"/>
+        app:layout_constraintTop_toBottomOf="@+id/employeeList_SearchView" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/employeeList_recycler"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:orientation="vertical"
+        android:paddingTop="17dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toTopOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/employList_Btntypes_recycler"
-        android:paddingTop="17dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:orientation="vertical"
-        tools:listitem="@layout/item_employee_list"/>
+        tools:listitem="@layout/item_employee_list" />
 
     <ImageView
         android:id="@+id/employeeList_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_add"
-        android:layout_marginBottom="47dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="47dp"
+        android:src="@drawable/ic_add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

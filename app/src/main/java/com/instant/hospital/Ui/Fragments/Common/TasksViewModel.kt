@@ -5,7 +5,6 @@ import androidx.lifecycle.viewModelScope
 import com.instant.hospital.Data.Network.NetworkState
 import com.instant.hospital.Data.Network.SingleLiveEvent
 import com.instant.hospital.Data.Network.WebServices
-import com.instant.hospital.Models.ModelAllTasks
 import com.instant.hospital.Utils.Const
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -21,12 +20,12 @@ class TasksViewModel @Inject constructor(private val webServices: WebServices) :
         viewModelScope.launch(Dispatchers.IO) {
 
             try {
-                val dataObjReceiver = webServices.getAllCallsByDate(date)
+                val dataReceiverObject = webServices.getAllTasks(date)
 
-                if (dataObjReceiver.status == Const.BACKEND_STATUS_CODE_SUCCESS){
-                    _tasksLiveData.postValue(NetworkState.getLoaded(dataObjReceiver))
+                if (dataReceiverObject.status == Const.BACKEND_STATUS_CODE_SUCCESS){
+                    _tasksLiveData.postValue(NetworkState.getLoaded(dataReceiverObject))
                 } else {
-                    _tasksLiveData.postValue(NetworkState.getErrorMessage(dataObjReceiver.message))
+                    _tasksLiveData.postValue(NetworkState.getErrorMessage(dataReceiverObject.message))
                 }
             } catch (ex: Exception) {
                 _tasksLiveData.postValue(NetworkState.getExeptionErrorMessage(ex))

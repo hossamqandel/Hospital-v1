@@ -18,6 +18,31 @@
     <color name="reports_card">#915FDC</color>
     <color name="attendance_leaving_card">#5FDCDC</color>
 
+    <!--  Receptionist Employee Package -->
+    <color name="calls_card">#5F9EDC</color>
+
+    <color name="case_details_grey">#989898</color>
+    <color name="case_details_button_red">#E63A3A</color>
+    <color name="case_details_button_grey">#D6D6D6</color>
+    <color name="case_details_button_text_grey">#9E9E9E</color>
+
+    <!--  Common - DocNurse  -->
+    <color name="cases_card_brown">#DC915F</color>
+    <color name="calls_accept_green">#1AD672</color>
+    <color name="calls_busy_orange">#EC9511</color>
+
+
+    <color name="docnurse_cases_details_you_have_request_light_orange_frame">#fde7d9</color>
+    <color name="docnurse_cases_details_you_have_request_deep_orange_text">#F36D13</color>
+
+    <color name="tasks_light_finished">#d5fae8</color>
+    <color name="tasks_light_proceess">#fdead9</color>
+    <color name="tasks_green_text">#08e074</color>
+    <color name="tasks_orange_text">#df7e2a</color>
+
+
+    <color name="light_grey">#EFEFEF</color>
+
 
 
 

@@ -31,16 +31,17 @@
 
     <TextView
         android:id="@+id/tasks_searchByDate_TV"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_17sdp"
         android:background="@drawable/text_input_date"
+        android:fontFamily="@font/poppins_regular"
+        android:gravity="center_vertical"
         android:hint="24.04.2022"
         android:paddingHorizontal="@dimen/_8sdp"
-        android:fontFamily="@font/poppins_regular"
-        android:textSize="@dimen/_12ssp"
         android:textColor="@color/black"
-        android:gravity="center_vertical"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintEnd_toStartOf="@+id/tasks_calender_Dialog"
         app:layout_constraintStart_toStartOf="@+id/tasks_BackArrow_IV"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -48,26 +49,20 @@
         android:id="@+id/tasks_calender_Dialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_14sdp"
         android:src="@drawable/ic_calender_black_background"
         app:layout_constraintBottom_toBottomOf="@+id/tasks_searchByDate_TV"
-        app:layout_constraintStart_toEndOf="@+id/tasks_searchByDate_TV"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tasks_searchByDate_TV" />
 
-    <ImageView
-        android:id="@+id/tasks_addCall_IV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_addcall"
-        android:layout_marginStart="@dimen/_4sdp"
-        app:layout_constraintBottom_toBottomOf="@+id/tasks_calender_Dialog"
-        app:layout_constraintStart_toEndOf="@+id/tasks_calender_Dialog"
-        app:layout_constraintTop_toTopOf="@+id/tasks_calender_Dialog" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/tasks_recycler"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginVertical="@dimen/_27sdp"
+        android:background="@color/white"
+        android:layout_marginVertical="@dimen/_15sdp"
+        android:paddingVertical="@dimen/_8sdp"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

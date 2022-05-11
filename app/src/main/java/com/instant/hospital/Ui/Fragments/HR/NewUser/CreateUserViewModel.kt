@@ -6,10 +6,10 @@ import com.instant.hospital.Data.Network.NetworkState
 import com.instant.hospital.Data.Network.SingleLiveEvent
 import com.instant.hospital.Data.Network.WebServices
 import com.instant.hospital.Utils.Const
-import com.instant.hospital.di.AppModule
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @HiltViewModel
@@ -18,7 +18,7 @@ class CreateUserViewModel @Inject constructor(private val webServices: WebServic
     private val _registerLiveData = SingleLiveEvent<NetworkState>()
     val registerLiveData get() = _registerLiveData
 
-    fun createNewUser(
+    fun registrationOrder(
         email: String,
         password: String,
         first_name: String,
@@ -34,17 +34,20 @@ class CreateUserViewModel @Inject constructor(private val webServices: WebServic
         _registerLiveData.postValue(NetworkState.LOADING)
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                val mData = webServices.createUser(email, password, first_name, last_name, gender, specialist, birthday, status, address, mobile, type)
-                if (mData.status == Const.STATUS_REQUEST_CODE_SUCCESS){
-                    _registerLiveData.postValue(NetworkState.getLoaded(mData))
+                val objectDataPoster = webServices.createUser(email, password, first_name, last_name, gender, specialist, birthday, status, address, mobile, type)
+                if (objectDataPoster.status == Const.BACKEND_STATUS_CODE_SUCCESS){
+                    withContext(Dispatchers.Main){
+                        _registerLiveData.value = NetworkState.getLoaded(objectDataPoster)
+                    }
                 }
+
                 else{
-                    _registerLiveData.postValue(NetworkState.getErrorMessage(mData.message))
+                    _registerLiveData.postValue(NetworkState.getErrorMessage(objectDataPoster.message))
                 }
 
             } catch (e: Exception) {
                 e.printStackTrace()
-                _registerLiveData.postValue(NetworkState.getErrorMessage(e))
+                _registerLiveData.postValue(NetworkState.getExeptionErrorMessage(e))
             }
         }
     }

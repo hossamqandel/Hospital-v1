@@ -6,6 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Ui.Fragments.Common.CallsFragment">
 
+
     <ImageView
         android:id="@+id/calls_BackArrow_IV"
         android:layout_width="wrap_content"
@@ -50,6 +51,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
